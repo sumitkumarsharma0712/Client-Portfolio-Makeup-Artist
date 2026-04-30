@@ -87,8 +87,25 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('touchend', endUnlockDrag);
     }
 
-    // 2. Navbar Scroll Effect
+    // 2. Navbar Scroll Effect & Mobile Menu
     const navbar = document.querySelector(".navbar");
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+        
+        // Close menu when a link is clicked
+        const navItems = navLinks.querySelectorAll("a");
+        navItems.forEach(item => {
+            item.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+    }
+
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
             navbar.classList.add("scrolled");

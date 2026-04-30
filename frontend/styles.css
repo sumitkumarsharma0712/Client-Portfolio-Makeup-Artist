@@ -241,6 +241,7 @@ body.locked { overflow: hidden; }
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 .logo { font-size: 2rem; letter-spacing: 3px; color: var(--primary-color); text-shadow: 0 0 10px rgba(0,123,181,0.2); }
+.hamburger { display: none; }
 .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
 .nav-links a { color: var(--text-color); text-decoration: none; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
 .nav-links a:hover { color: var(--primary-color); }
@@ -425,9 +426,57 @@ footer { background: rgba(255,255,255,0.6); backdrop-filter: blur(10px); padding
 
 /* Responsive */
 @media (max-width: 900px) {
-    .hero { flex-direction: column; justify-content: center; padding: 6rem 2rem 2rem; text-align: center; }
-    .hero-slider-wrap { width: 100%; margin-top: 3rem; height: 50vh; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .navbar { padding: 1rem 2rem; }
-    .nav-links { display: none; }
+    .cursor { display: none !important; }
+    .unlock-logo { font-size: 3rem; letter-spacing: 3px; }
+    .unlock-tagline { font-size: 1.2rem; }
+    .slide-to-unlock { width: 90%; max-width: 320px; margin-top: 3rem; }
+    
+    .hero { flex-direction: column; justify-content: center; padding: 6rem 1rem 2rem; text-align: center; }
+    .hero-content { padding-right: 0; }
+    .hero-title { font-size: 2.8rem; margin-top: 1rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .hero-slider-wrap { width: 100%; max-width: 100%; margin-top: 2rem; height: 40vh; transform: none !important; }
+    
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .section { padding: 4rem 0; }
+    .section-title { font-size: 2.2rem !important; }
+    
+    .navbar { padding: 1rem 2rem; justify-content: space-between; flex-wrap: wrap; }
+    
+    /* Hamburger Menu Styles */
+    .hamburger { display: block; font-size: 1.8rem; color: var(--primary-color); cursor: pointer; }
+    .nav-links { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        background: rgba(255, 255, 255, 0.95); 
+        backdrop-filter: blur(10px);
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        padding: 1.5rem 0; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .nav-links.active { display: flex; }
+    
+    .portfolio-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    .tab-btn { margin: 0; font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+    
+    .ba-slider { height: 350px; }
+    .testimo-wrapper { padding: 2rem 1rem; }
+    .quote { font-size: 1.4rem; }
+    
+    .contact-card { padding: 2rem 1.5rem; }
+    .timeline { padding-left: 1rem; }
+    .timeline-dot { left: -22px; width: 12px; height: 12px; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.2rem; }
+    .ba-slider { height: 250px; }
+    .unlock-logo { font-size: 2.5rem; }
+    .unlock-tagline { font-size: 1rem; }
+    .navbar { padding: 1rem; }
 }
