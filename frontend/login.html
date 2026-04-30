@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjani | Admin Authentication</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .auth-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        .auth-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .auth-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .auth-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .auth-toggle {
+            display: flex;
+            background: rgba(255,255,255,0.4);
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+        .auth-toggle-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            background: transparent;
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .auth-toggle-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,123,181,0.2);
+        }
+
+        .auth-form {
+            text-align: left;
+            display: none;
+        }
+        .auth-form.active {
+            display: block;
+            animation: fadeUp 0.5s ease;
+        }
+
+        .auth-form .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-message {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: #111;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fullscreen Creative Background Video reused from homepage -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">ANJANI</div>
+            <p class="auth-subtitle">Welcome back to your realm</p>
+
+            <!-- Toggle Switch -->
+            <div class="auth-toggle">
+                <button class="auth-toggle-btn active" id="show-login">Login</button>
+                <button class="auth-toggle-btn" id="show-register">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" required placeholder=" ">
+                    <label for="loginEmail">Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" required placeholder=" ">
+                    <label for="loginPassword">Password</label>
+                </div>
+                <button type="submit" class="btn-primary full-width" id="loginBtn">Secure Login</button>
+                <div class="auth-message" id="loginMessage"></div>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="auth-form">
+                <div class="input-group">
+                    <input type="text" id="regUsername" required placeholder=" ">
+                    <label for="regUsername">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="regEmail" required placeholder=" ">
+                    <label for="regEmail">Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="regPassword" required placeholder=" ">
+                    <label for="regPassword">Password</label>
+                </div>
+                <button type="submit" class="btn-primary full-width" id="registerBtn">Create Account</button>
+                <div class="auth-message" id="regMessage"></div>
+            </form>
+
+            <a href="index.html" class="back-link">← Return to Portfolio</a>
+        </div>
+    </div>
+
+    <!-- Frontend logic for the auth forms -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnShowLogin = document.getElementById('show-login');
+            const btnShowRegister = document.getElementById('show-register');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            
+            const loginMsg = document.getElementById('loginMessage');
+            const regMsg = document.getElementById('regMessage');
+
+            // Form Toggling
+            btnShowLogin.addEventListener('click', () => {
+                btnShowLogin.classList.add('active');
+                btnShowRegister.classList.remove('active');
+                loginForm.classList.add('active');
+                registerForm.classList.remove('active');
+                loginMsg.innerText = ''; regMsg.innerText = '';
+            });
+
+            btnShowRegister.addEventListener('click', () => {
+                btnShowRegister.classList.add('active');
+                btnShowLogin.classList.remove('active');
+                registerForm.classList.add('active');
+                loginForm.classList.remove('active');
+                loginMsg.innerText = ''; regMsg.innerText = '';
+            });
+
+            // Login Logic
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('loginBtn');
+                btn.innerHTML = 'Verifying...';
+                
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, password })
+                    });
+                    const data = await response.json();
+
+                    if(response.ok) {
+                        loginMsg.style.color = "var(--primary-color)";
+                        loginMsg.innerText = "Login Successful! Redirecting...";
+                        setTimeout(() => {
+                            window.location.href = 'index.html'; // Or admin dashboard
+                        }, 1500);
+                    } else {
+                        loginMsg.style.color = "#d9534f";
+                        loginMsg.innerText = data.error;
+                        btn.innerHTML = 'Secure Login';
+                    }
+                } catch(err) {
+                    loginMsg.style.color = "#d9534f";
+                    loginMsg.innerText = "Server Error. Ensure backend is running.";
+                    btn.innerHTML = 'Secure Login';
+                }
+            });
+
+            // Registration Logic
+            registerForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('registerBtn');
+                btn.innerHTML = 'Registering...';
+
+                const username = document.getElementById('regUsername').value;
+                const email = document.getElementById('regEmail').value;
+                const password = document.getElementById('regPassword').value;
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username, email, password })
+                    });
+                    const data = await response.json();
+
+                    if(response.ok) {
+                        regMsg.style.color = "var(--primary-color)";
+                        regMsg.innerText = data.message;
+                        registerForm.reset();
+                        btn.innerHTML = 'Create Account';
+                    } else {
+                        regMsg.style.color = "#d9534f";
+                        regMsg.innerText = data.error;
+                        btn.innerHTML = 'Create Account';
+                    }
+                } catch(err) {
+                    regMsg.style.color = "#d9534f";
+                    regMsg.innerText = "Server Error. Ensure backend is running.";
+                    btn.innerHTML = 'Create Account';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjani | Makeup Artist Portfolio</title>
+    <meta name="description" content="Professional Makeup Artist specializing in Bridal, Editorial, and Glamour makeup.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <!-- Front Page Unlock Screen -->
+    <div id="unlock-screen">
+        <div class="unlock-content">
+            <h1 class="unlock-logo">ANJANI</h1>
+            <p class="unlock-tagline">"The Magic Touch"</p>
+        </div>
+        <div class="slide-to-unlock">
+            <p class="unlock-text">Slide to open portfolio</p>
+            <div class="unlock-handle" id="unlock-drag-handle">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Creative Background Video -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+    </video>
+    <!-- Overlay to enforce the sky blue tint and readability -->
+    <div class="video-overlay"></div>
+
+    <!-- Custom Cursor removed as requested -->
+
+    <!-- Animated Decorative Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">ANJANI</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact" class="btn-outline">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title brush-text">Transforming<br>beauty, <br> <span class="accent-text">one brush</span> at a time</h1>
+            <p class="hero-subtitle">Bridal • Editorial • Glamour</p>
+            <a href="#contact" class="btn-primary" style="margin-top:1rem;">Book Now</a>
+        </div>
+        
+        <!-- Interactive Front Page Cursor Slider -->
+        <div class="hero-slider-wrap">
+            <div class="slider-track" id="hero-slider">
+                <img src="bridal%20look%20front.png" alt="Bridal Look" draggable="false">
+                <img src="Anime%20look%20full.png" alt="Anime Editorial" draggable="false">
+                <img src="party%20look%203%20full.png" alt="Party Glamour" draggable="false">
+                <img src="Bengali%20look%20full.png" alt="Bengali Bridal" draggable="false">
+                <img src="south%20indian%20look%20full.png" alt="South Indian Bridal" draggable="false">
+                <img src="Garba%20look%20full.png" alt="Garba Festive" draggable="false">
+                <img src="party%20look%206%20full.png" alt="Evening Glam" draggable="false">
+                <img src="haldi%20look.png" alt="Haldi Natural" draggable="false">
+                <img src="mehndi%20front%20look.png" alt="Mehndi Look" draggable="false">
+                <img src="rajasthani%20look.png" alt="Rajasthani Beauty" draggable="false">
+                <img src="party%205%20full.png" alt="Party Glam" draggable="false">
+                <img src="bridal%202%20full.png" alt="Classic Bridal" draggable="false">
+                <img src="Ethnic%20Look%20side.png" alt="Ethnic Look" draggable="false">
+                <img src="Karva%20chauth%20full.png" alt="Karva Chauth" draggable="false">
+                <img src="Groom%20look%20full.png" alt="Groom Look" draggable="false">
+            </div>
+            <button class="hero-nav prev-btn" id="hero-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="hero-nav next-btn" id="hero-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Scrolling Marquee Text -->
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            <span>GLAMOUR • EDITORIAL • BRIDAL • AVANT-GARDE • NATURAL GLOW • SPECIAL EFFECTS • </span>
+            <span>GLAMOUR • EDITORIAL • BRIDAL • AVANT-GARDE • NATURAL GLOW • SPECIAL EFFECTS • </span>
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <section id="about" class="about section">
+        <div class="container about-grid">
+            <div class="about-text reveal">
+                <h2 class="section-title brush-underline mb-2" style="font-size: 3rem;">The Artist Behind the Brush</h2>
+                <p>Anjani is a professional makeup artist with a passion for enhancing natural beauty and a flair for high‑fashion editorial aesthetics. Every face is her canvas, and every look tells a bold, beautiful story. From bridal transformations to editorial shoots, she blends creativity with precision to deliver bespoke makeup experiences that celebrate individuality and confidence.</p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>2024 - The Beginning</h4>
+                        <ul class="text-muted" style="padding-left:1.5rem; margin-top:0.5rem;">
+                            <li style="margin-bottom:0.3rem;">Entered the world of makeup artistry through dedicated training and practice.</li>
+                            <li style="margin-bottom:0.3rem;">Mastered the fundamentals of skin preparation and advanced product application through professional training at Queen Academy.</li>
+                            <li>Built a strong foundation in natural beauty enhancement and professional techniques.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>2025 - Bridal Specialist</h4>
+                        <ul class="text-muted" style="padding-left:1.5rem; margin-top:0.5rem;">
+                            <li style="margin-bottom:0.3rem;">Transitioned from learner to professional makeup artist.</li>
+                            <li style="margin-bottom:0.3rem;">Launched a signature bridal makeup studio, serving hundreds of brides and grooms.</li>
+                            <li style="margin-bottom:0.3rem;">Specialized in timeless, elegant bridal looks that became her hallmark.</li>
+                            <li>Expanded into diverse creative projects, gaining recognition for precision and artistry.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4>Present - Editorial Pro</h4>
+                        <ul class="text-muted" style="padding-left:1.5rem; margin-top:0.5rem;">
+                            <li style="margin-bottom:0.3rem;">Established as a trusted professional makeup artist for weddings, editorial shoots, and personal transformations.</li>
+                            <li style="margin-bottom:0.3rem;">Known for crafting bold, unforgettable looks that merge fashion with individuality.</li>
+                            <li style="margin-bottom:0.3rem;">Continues to evolve her artistry, blending creativity with technical mastery.</li>
+                            <li>Focuses on delivering bespoke experiences that empower clients with confidence and elegance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image reveal reveal-delay-1">
+                <img src="pro%20makeup%20artist%20certificate.png" alt="Anjani - Makeup Artist" class="profile-img floating-element">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery with Filtering -->
+    <section id="portfolio" class="portfolio section" style="background: rgba(255,255,255,0.3);">
+        <div class="container">
+            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Signature Looks</h2>
+            <p class="text-center text-muted mb-2" style="margin-top:1rem;">Explore the different makeup aesthetics.</p>
+
+            <!-- Category Tabs -->
+            <div class="portfolio-tabs text-center reveal" style="margin-top:2rem;">
+                <button class="tab-btn active" data-filter="all">All Looks</button>
+                <button class="tab-btn" data-filter="bridal">Bridal</button>
+                <button class="tab-btn" data-filter="editorial">Editorial</button>
+                <button class="tab-btn" data-filter="glam">Glamour</button>
+                <button class="tab-btn" data-filter="natural">Natural</button>
+            </div>
+
+            <div class="gallery-grid" style="margin-top:2rem;">
+<div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bengali%20look%20full.png" loading="lazy" alt="Bengali Look Full">
+                        <div class="overlay">
+                            <h3>Bengali Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="south%20indian%20look%20full.png" loading="lazy" alt="South Indian Look Full">
+                        <div class="overlay">
+                            <h3>South Indian Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20front%202.png" loading="lazy" alt="Bridal Look Front 2">
+                        <div class="overlay">
+                            <h3>Bridal Look Front 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bridal%204%20full%20look.png" loading="lazy" alt="Bridal 4 Full Look">
+                        <div class="overlay">
+                            <h3>Bridal 4 Full Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bridal%20look%203.png" loading="lazy" alt="Bridal Look 3">
+                        <div class="overlay">
+                            <h3>Bridal Look 3</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="baridal%203%20look%20full.png" loading="lazy" alt="Baridal 3 Look Full">
+                        <div class="overlay">
+                            <h3>Baridal 3 Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%202%20full.png" loading="lazy" alt="Bridal 2 Full">
+                        <div class="overlay">
+                            <h3>Bridal 2 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%204%20full.png" loading="lazy" alt="Bridal 4 Full">
+                        <div class="overlay">
+                            <h3>Bridal 4 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20front.png" loading="lazy" alt="Bridal Look Front">
+                        <div class="overlay">
+                            <h3>Bridal Look Front</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20left%20side.png" loading="lazy" alt="Bridal Look Left Side">
+                        <div class="overlay">
+                            <h3>Bridal Look Left Side</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20selfi.png" loading="lazy" alt="Bridal Look Selfi">
+                        <div class="overlay">
+                            <h3>Bridal Look Selfi</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%202.png" loading="lazy" alt="Bridal Model 2">
+                        <div class="overlay">
+                            <h3>Bridal Model 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%20look%20full.png" loading="lazy" alt="Bridal Model Look Full">
+                        <div class="overlay">
+                            <h3>Bridal Model Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%20look.png" loading="lazy" alt="Bridal Model Look">
+                        <div class="overlay">
+                            <h3>Bridal Model Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="side%20look%20bridal%202.png" loading="lazy" alt="Side Look Bridal 2">
+                        <div class="overlay">
+                            <h3>Side Look Bridal 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Anime%20look%20full.png" loading="lazy" alt="Anime Look Full">
+                        <div class="overlay">
+                            <h3>Anime Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Garba%20look%20full.png" loading="lazy" alt="Garba Look Full">
+                        <div class="overlay">
+                            <h3>Garba Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Karva%20chauth%20full.png" loading="lazy" alt="Karva Chauth Full">
+                        <div class="overlay">
+                            <h3>Karva Chauth Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="rajasthani%20look%20front.png" loading="lazy" alt="Rajasthani Look Front">
+                        <div class="overlay">
+                            <h3>Rajasthani Look Front</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="rajasthani%20look.png" loading="lazy" alt="Rajasthani Look">
+                        <div class="overlay">
+                            <h3>Rajasthani Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Ethnic%20Look%20side.png" loading="lazy" alt="Ethnic Look Side">
+                        <div class="overlay">
+                            <h3>Ethnic Look Side</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Ethnic%20Look.png" loading="lazy" alt="Ethnic Look">
+                        <div class="overlay">
+                            <h3>Ethnic Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%205%20full.png" loading="lazy" alt="Party 5 Full">
+                        <div class="overlay">
+                            <h3>Party 5 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%202%20full.png" loading="lazy" alt="Party Look 2 Full">
+                        <div class="overlay">
+                            <h3>Party Look 2 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%203%20full.png" loading="lazy" alt="Party Look 3 Full">
+                        <div class="overlay">
+                            <h3>Party Look 3 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%204%20full.png" loading="lazy" alt="Party Look 4 Full">
+                        <div class="overlay">
+                            <h3>Party Look 4 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%206%20full.png" loading="lazy" alt="Party Look 6 Full">
+                        <div class="overlay">
+                            <h3>Party Look 6 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look.png" loading="lazy" alt="Party Look">
+                        <div class="overlay">
+                            <h3>Party Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="haldi%20look.png" loading="lazy" alt="Haldi Look">
+                        <div class="overlay">
+                            <h3>Haldi Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="mehndi%20front%20look.png" loading="lazy" alt="Mehndi Front Look">
+                        <div class="overlay">
+                            <h3>Mehndi Front Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="mehndi%20side%20look.png" loading="lazy" alt="Mehndi Side Look">
+                        <div class="overlay">
+                            <h3>Mehndi Side Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="Groom%20look%20full.png" loading="lazy" alt="Groom Look Full">
+                        <div class="overlay">
+                            <h3>Groom Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Transformation Custom Slider Section -->
+    <section class="before-after section">
+        <div class="container text-center">
+            <h2 class="section-title brush-underline mb-2" style="font-size: 3rem; display:inline-block;">Transformations</h2>
+            <div class="slider-container reveal" style="margin-top:2rem;">
+                <p class="text-muted" style="margin-bottom:2rem;">See the magic touch in action with our transformation highlights.</p>
+                <div class="transform-grid">
+<div class="transform-item reveal">
+                        <img src="Anime%20look%20before%20%26%20after.png" loading="lazy" alt="Anime Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Bengali%20look%20Before%20%26%20After.png" loading="lazy" alt="Bengali Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Bridal%20look%203%20Before%20%26%20after.png" loading="lazy" alt="Bridal Look 3 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Garba%20look%20before%20%26%20after.png" loading="lazy" alt="Garba Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Groom%20look%20before%20%26%20after.png" loading="lazy" alt="Groom Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Karva%20chauth%20look%20before%20%26%20After.png" loading="lazy" alt="Karva Chauth Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="haldi%20look%20before%20%26%20after.png" loading="lazy" alt="Haldi Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="mehndi%20look%20before%20%26%20after.png" loading="lazy" alt="Mehndi Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="model%202%20look%20before%20%26%20after.png" loading="lazy" alt="Model 2 Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%205%20before%20%26%20after.png" loading="lazy" alt="Party 5 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%202%20before%20%26%20after.png" loading="lazy" alt="Party Look 2 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%203%20before%20%26%20after.png" loading="lazy" alt="Party Look 3 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%204%20before%20%26%20after.png" loading="lazy" alt="Party Look 4 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%206%20before%20%26%20after.png" loading="lazy" alt="Party Look 6 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%20before%20%26%20after.png" loading="lazy" alt="Party Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="rajasthani%20look%20before%20%26%20after.png" loading="lazy" alt="Rajasthani Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="south%20indian%20look%20before%20%26%20after.png" loading="lazy" alt="South Indian Look Before & After">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Behind the Scenes & Academy -->
+    <section id="bts" class="portfolio section">
+        <div class="container">
+            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Behind the Scenes & Academy</h2>
+            <p class="text-center text-muted mb-2" style="margin-top:1rem;">Moments with clients, artists, and certification achievements.</p>
+            <div class="gallery-grid" style="margin-top:2rem;">
+<div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="Bengali%20look%20with%20artist.png" loading="lazy" alt="Bengali Look With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="Bridal%20look%20with%20artists.png" loading="lazy" alt="Bridal Look With Artists">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="bridal%204%20with%20artist.png" loading="lazy" alt="Bridal 4 With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20certificate.png" loading="lazy" alt="Bridal Model 2 With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20certificate%20with%20model.png" loading="lazy" alt="Pro Makeup Artist Certificate With Model">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20certificate.png" loading="lazy" alt="Pro Makeup Artist Certificate">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20group%20photo%20in%20academy.png" loading="lazy" alt="Pro Makeup Artist Group Photo In Academy">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="rajasthani%20look%20with%20makeup%20artist.png" loading="lazy" alt="Rajasthani Look With Makeup Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="south%20indian%20look%20with%20artist.png" loading="lazy" alt="South Indian Look With Artist">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section" style="background: rgba(255,255,255,0.2);">
+        <div class="container">
+            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Client Love</h2>
+            
+            <div class="testimo-wrapper reveal" style="margin-top: 3rem;">
+                <div class="testimonial-carousel">
+                    <div class="testimo-slide active">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"Anjani made me feel like an absolute queen on my wedding day. The glow was unbelievable."</p>
+                        <h4>- Karishma Patel</h4>
+                    </div>
+                    <div class="testimo-slide">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"My glamour look lasted flawlessly all night. Absolutely perfectly painted face!"</p>
+                        <h4>- Tanu Patel</h4>
+                    </div>
+                    <div class="testimo-slide">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"I had my makeup done for a shoot and her precision on camera was absolutely stunning."</p>
+                        <h4>- Sakshi Singh</h4>
+                    </div>
+                    <div class="testimo-slide">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"Amazing experience! She understood exactly what I wanted and made me look gorgeous for the event."</p>
+                        <h4>- Astha</h4>
+                    </div>
+                    <div class="testimo-slide">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"I loved the subtle and natural look she created. Highly professional and very talented artist!"</p>
+                        <h4>- Palak</h4>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button id="prevTestimo" class="btn-icon"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button id="nextTestimo" class="btn-icon"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 class="section-title brush-underline mb-2" style="font-size: 3rem;">Let's Create Magic</h2>
+                    <p class="text-muted" style="margin-top:1rem; font-size:1.1rem;">Have an event or a photoshoot coming up? Secure a date via the booking form or reach out directly.</p>
+                    
+                    <div class="icon-links mt-4">
+                        <a href="tel:+916264547696" class="contact-icon"><i class="fa-solid fa-phone"></i> +91 6264547696</a>
+                        <a href="mailto:anjanipatel9926@gmail.com" class="contact-icon"><i class="fa-solid fa-envelope"></i> anjanipatel9926@gmail.com</a>
+                        <a href="https://www.instagram.com/the_magic_touch_77?igsh=MWUzZjlwOGIxYXhucg==" class="contact-icon" target="_blank"><i class="fa-brands fa-instagram"></i> @the_magic_touch_77</a>
+                    </div>
+                </div>
+
+                <div class="glass-card contact-card reveal reveal-delay-1">
+                    <h3 class="text-center mb-2" style="font-size: 1.8rem; color:var(--primary-color);">Book Your Appointment</h3>
+                    <p class="text-center text-muted mb-2" style="margin-bottom: 2rem;">Secure your spot on the calendar.</p>
+                    <form class="booking-form" id="bookingForm">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" id="contact" name="contact" required placeholder=" ">
+                            <label for="contact">Contact Number</label>
+                        </div>
+                        <div class="input-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a Service Segment</option>
+                                <option value="bridal">Bridal Styling / Wedding</option>
+                                <option value="editorial">Editorial & High Fashion</option>
+                                <option value="party">Party / Event Glamour</option>
+                                <option value="lesson">Private Makeup Consultation</option>
+                            </select>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 1rem;">
+                            <input type="date" id="date" name="date" required>
+                            <label for="date" class="date-label">Preferred Date</label>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">Send Booking Request</button>
+                        <div id="formMessage" class="mt-2 text-center" style="display:none; font-weight: 600;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container reveal">
+            <div class="footer-logo">ANJANI</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/the_magic_touch_77?igsh=MWUzZjlwOGIxYXhucg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+            <p>&copy; 2026 Anjani Makeup Artistry. Designed with elegance.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

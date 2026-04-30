@@ -1,0 +1,357 @@
+=== GALLERY ===
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bengali%20look%20full.png" loading="lazy" alt="Bengali Look Full">
+                        <div class="overlay">
+                            <h3>Bengali Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="south%20indian%20look%20full.png" loading="lazy" alt="South Indian Look Full">
+                        <div class="overlay">
+                            <h3>South Indian Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20front%202.png" loading="lazy" alt="Bridal Look Front 2">
+                        <div class="overlay">
+                            <h3>Bridal Look Front 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bridal%204%20full%20look.png" loading="lazy" alt="Bridal 4 Full Look">
+                        <div class="overlay">
+                            <h3>Bridal 4 Full Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="Bridal%20look%203.png" loading="lazy" alt="Bridal Look 3">
+                        <div class="overlay">
+                            <h3>Bridal Look 3</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="baridal%203%20look%20full.png" loading="lazy" alt="Baridal 3 Look Full">
+                        <div class="overlay">
+                            <h3>Baridal 3 Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%202%20full.png" loading="lazy" alt="Bridal 2 Full">
+                        <div class="overlay">
+                            <h3>Bridal 2 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%204%20full.png" loading="lazy" alt="Bridal 4 Full">
+                        <div class="overlay">
+                            <h3>Bridal 4 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20front.png" loading="lazy" alt="Bridal Look Front">
+                        <div class="overlay">
+                            <h3>Bridal Look Front</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20left%20side.png" loading="lazy" alt="Bridal Look Left Side">
+                        <div class="overlay">
+                            <h3>Bridal Look Left Side</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20look%20selfi.png" loading="lazy" alt="Bridal Look Selfi">
+                        <div class="overlay">
+                            <h3>Bridal Look Selfi</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%202.png" loading="lazy" alt="Bridal Model 2">
+                        <div class="overlay">
+                            <h3>Bridal Model 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%20look%20full.png" loading="lazy" alt="Bridal Model Look Full">
+                        <div class="overlay">
+                            <h3>Bridal Model Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="bridal%20model%20look.png" loading="lazy" alt="Bridal Model Look">
+                        <div class="overlay">
+                            <h3>Bridal Model Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-bridal reveal">
+                    <div class="image-wrapper">
+                        <img src="side%20look%20bridal%202.png" loading="lazy" alt="Side Look Bridal 2">
+                        <div class="overlay">
+                            <h3>Side Look Bridal 2</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Anime%20look%20full.png" loading="lazy" alt="Anime Look Full">
+                        <div class="overlay">
+                            <h3>Anime Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Garba%20look%20full.png" loading="lazy" alt="Garba Look Full">
+                        <div class="overlay">
+                            <h3>Garba Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Karva%20chauth%20full.png" loading="lazy" alt="Karva Chauth Full">
+                        <div class="overlay">
+                            <h3>Karva Chauth Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="rajasthani%20look%20front.png" loading="lazy" alt="Rajasthani Look Front">
+                        <div class="overlay">
+                            <h3>Rajasthani Look Front</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="rajasthani%20look.png" loading="lazy" alt="Rajasthani Look">
+                        <div class="overlay">
+                            <h3>Rajasthani Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Ethnic%20Look%20side.png" loading="lazy" alt="Ethnic Look Side">
+                        <div class="overlay">
+                            <h3>Ethnic Look Side</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-editorial reveal">
+                    <div class="image-wrapper">
+                        <img src="Ethnic%20Look.png" loading="lazy" alt="Ethnic Look">
+                        <div class="overlay">
+                            <h3>Ethnic Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%205%20full.png" loading="lazy" alt="Party 5 Full">
+                        <div class="overlay">
+                            <h3>Party 5 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%202%20full.png" loading="lazy" alt="Party Look 2 Full">
+                        <div class="overlay">
+                            <h3>Party Look 2 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%203%20full.png" loading="lazy" alt="Party Look 3 Full">
+                        <div class="overlay">
+                            <h3>Party Look 3 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%204%20full.png" loading="lazy" alt="Party Look 4 Full">
+                        <div class="overlay">
+                            <h3>Party Look 4 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look%206%20full.png" loading="lazy" alt="Party Look 6 Full">
+                        <div class="overlay">
+                            <h3>Party Look 6 Full</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-glam reveal">
+                    <div class="image-wrapper">
+                        <img src="party%20look.png" loading="lazy" alt="Party Look">
+                        <div class="overlay">
+                            <h3>Party Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="haldi%20look.png" loading="lazy" alt="Haldi Look">
+                        <div class="overlay">
+                            <h3>Haldi Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="mehndi%20front%20look.png" loading="lazy" alt="Mehndi Front Look">
+                        <div class="overlay">
+                            <h3>Mehndi Front Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="mehndi%20side%20look.png" loading="lazy" alt="Mehndi Side Look">
+                        <div class="overlay">
+                            <h3>Mehndi Side Look</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item item-natural reveal">
+                    <div class="image-wrapper">
+                        <img src="Groom%20look%20full.png" loading="lazy" alt="Groom Look Full">
+                        <div class="overlay">
+                            <h3>Groom Look Full</h3>
+                        </div>
+                    </div>
+                </div>
+
+=== TRANSFORM ===
+                    <div class="transform-item reveal">
+                        <img src="Anime%20look%20before%20%26%20after.png" loading="lazy" alt="Anime Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Bengali%20look%20Before%20%26%20After.png" loading="lazy" alt="Bengali Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Bridal%20look%203%20Before%20%26%20after.png" loading="lazy" alt="Bridal Look 3 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Garba%20look%20before%20%26%20after.png" loading="lazy" alt="Garba Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Groom%20look%20before%20%26%20after.png" loading="lazy" alt="Groom Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="Karva%20chauth%20look%20before%20%26%20After.png" loading="lazy" alt="Karva Chauth Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="haldi%20look%20before%20%26%20after.png" loading="lazy" alt="Haldi Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="mehndi%20look%20before%20%26%20after.png" loading="lazy" alt="Mehndi Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="model%202%20look%20before%20%26%20after.png" loading="lazy" alt="Model 2 Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%205%20before%20%26%20after.png" loading="lazy" alt="Party 5 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%202%20before%20%26%20after.png" loading="lazy" alt="Party Look 2 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%203%20before%20%26%20after.png" loading="lazy" alt="Party Look 3 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%204%20before%20%26%20after.png" loading="lazy" alt="Party Look 4 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%206%20before%20%26%20after.png" loading="lazy" alt="Party Look 6 Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="party%20look%20before%20%26%20after.png" loading="lazy" alt="Party Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="rajasthani%20look%20before%20%26%20after.png" loading="lazy" alt="Rajasthani Look Before & After">
+                    </div>
+                    <div class="transform-item reveal">
+                        <img src="south%20indian%20look%20before%20%26%20after.png" loading="lazy" alt="South Indian Look Before & After">
+                    </div>
+
+=== BTS ===
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="Bengali%20look%20with%20artist.png" loading="lazy" alt="Bengali Look With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="Bridal%20look%20with%20artists.png" loading="lazy" alt="Bridal Look With Artists">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="bridal%204%20with%20artist.png" loading="lazy" alt="Bridal 4 With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="bridal%20model%202%20with%20artist.png" loading="lazy" alt="Bridal Model 2 With Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20certificate%20with%20model.png" loading="lazy" alt="Pro Makeup Artist Certificate With Model">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20certificate.png" loading="lazy" alt="Pro Makeup Artist Certificate">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="pro%20makeup%20artist%20group%20photo%20in%20academy.png" loading="lazy" alt="Pro Makeup Artist Group Photo In Academy">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="rajasthani%20look%20with%20makeup%20artist.png" loading="lazy" alt="Rajasthani Look With Makeup Artist">
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <div class="image-wrapper">
+                            <img src="south%20indian%20look%20with%20artist.png" loading="lazy" alt="South Indian Look With Artist">
+                        </div>
+                    </div>
