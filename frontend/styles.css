@@ -107,7 +107,7 @@ body.locked { overflow: hidden; }
 
 #unlock-screen {
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
+    top: 0; left: 0; width: 100vw; height: 100vh; height: 100dvh;
     z-index: 10000;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     background: rgba(0, 15, 30, 0.1); 
@@ -248,7 +248,7 @@ body.locked { overflow: hidden; }
 
 /* Hero Section with Cursor Slide Details */
 .hero {
-    height: 100vh;
+    height: 100vh; height: 100dvh;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 6rem; position: relative;
 }
