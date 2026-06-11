@@ -402,6 +402,30 @@ document.addEventListener("DOMContentLoaded", () => {
             // Open WhatsApp directly
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
             
+            // Fire premium confetti side-burst animation
+            if (typeof confetti === "function") {
+                const duration = 2.5 * 1000;
+                const animationEnd = Date.now() + duration;
+                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 11000 };
+
+                function randomInRange(min, max) {
+                    return Math.random() * (max - min) + min;
+                }
+
+                const interval = setInterval(function() {
+                    const timeLeft = animationEnd - Date.now();
+
+                    if (timeLeft <= 0) {
+                        return clearInterval(interval);
+                    }
+
+                    const particleCount = 50 * (timeLeft / duration);
+                    // since particles fall down, animate a bit higher than they would
+                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                }, 250);
+            }
+            
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 if (formMessage) formMessage.style.display = "none";
