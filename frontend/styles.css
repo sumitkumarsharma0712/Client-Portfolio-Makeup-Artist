@@ -102,7 +102,7 @@ h1, h2, h3, h4, .logo { font-family: var(--font-heading); font-weight: 600; }
 .mt-2 { margin-top: 1rem; } .mt-4 { margin-top: 2rem; } .mb-2 { margin-bottom: 1rem; }
 .accent-text { color: var(--primary-color); font-style: italic; }
 
-/* --- Front Page Slide to Unlock Screen --- */
+/* --- Front Page Interactive Lamp Screen --- */
 body.locked { overflow: hidden; }
 
 #unlock-screen {
@@ -110,46 +110,197 @@ body.locked { overflow: hidden; }
     top: 0; left: 0; width: 100vw; height: 100vh; height: 100dvh;
     z-index: 10000;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    background: rgba(0, 15, 30, 0.1); 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    transition: transform 1.2s cubic-bezier(0.8, 0, 0.2, 1);
+    background: #090a0f; 
+    transition: background 0.3s ease, opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+/* Light turned on state */
+#unlock-screen.lit {
+    background: #fffbef;
+}
+
 #unlock-screen.unlocked {
-    transform: translateY(-100vh);
+    opacity: 0;
+    transform: scale(1.1);
     pointer-events: none;
 }
-.unlock-content { text-align: center; }
-.unlock-logo {
-    font-size: 5rem; letter-spacing: 5px; color: #fff;
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
-    margin-bottom: 0.5rem;
+
+.unlock-content { 
+    text-align: center; 
+    margin-bottom: 1.5rem;
 }
+
+.unlock-logo-img {
+    width: 320px;
+    max-width: 85vw;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+#unlock-screen.lit .unlock-logo-img {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+}
+
 .unlock-tagline {
-    font-size: 2rem; color: #111;
-    font-family: var(--font-heading); font-style: italic;
-    font-weight: 800; letter-spacing: 2px;
-    text-shadow: 0 0 15px #fff;
+    font-size: 1.4rem; 
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-heading); 
+    font-style: italic;
+    font-weight: 500; 
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    transition: color 0.4s ease;
 }
-.slide-to-unlock {
-    width: 350px; height: 60px; margin-top: 5rem;
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4);
-    border-radius: 30px; position: relative; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
+
+#unlock-screen.lit .unlock-tagline {
+    color: #444;
 }
-.unlock-text {
-    color: #fff; font-size: 1rem; font-weight: 500; text-transform: uppercase;
-    letter-spacing: 2px; z-index: 1; pointer-events: none; opacity: 0.8;
+
+.lamp-container {
+    position: relative;
+    width: 400px;
+    max-width: 90vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.unlock-handle {
-    width: 52px; height: 52px; background: var(--primary-color); border-radius: 50%;
-    position: absolute; left: 4px; top: 3px; z-index: 2;
-    display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem;
-    box-shadow: 0 0 15px rgba(0,123,181,0.6);
-    cursor: grab;
+
+.interactive-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
 }
-.unlock-handle:active { cursor: grabbing; box-shadow: 0 0 25px rgba(0,123,181,0.9); }
+
+/* Subtle breathing glow behind cartoon when dark */
+#ambient-glow {
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { fill-opacity: 0.2; }
+    50% { fill-opacity: 0.5; }
+}
+
+#pull-cord-group {
+    transform-origin: 235px 115px;
+    transition: transform 0.1s ease-out;
+}
+
+#pull-cord-group.snap-back {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+}
+
+.pull-instruction {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    animation: pulseInstruction 2s infinite ease-in-out;
+    pointer-events: none;
+    transition: color 0.4s ease;
+}
+
+#unlock-screen.lit .pull-instruction {
+    color: #666;
+}
+
+@keyframes pulseInstruction {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+/* Cartoon Boy Interaction Styles */
+#cartoon-boy {
+    cursor: pointer;
+}
+
+#cartoon-boy:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+}
+
+#boy-right-arm, #boy-right-hand {
+    transition: d 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                cx 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                cy 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+/* About Me Section Slider */
+.about-slider {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: -20px 20px 0 rgba(0,123,181,0.2);
+    animation: floatShape 6s ease-in-out infinite;
+}
+
+.about-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.6s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.about-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.about-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.about-slider-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.about-slider-btn.prev {
+    left: 15px;
+}
+
+.about-slider-btn.next {
+    right: 15px;
+}
+
+
 
 /* Layout & Cards (Glassmorphism) */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }

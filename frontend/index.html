@@ -14,18 +14,121 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 <body>
-    <!-- Front Page Unlock Screen -->
+    <!-- Front Page Unlock Screen (Interactive Dark Room) -->
     <div id="unlock-screen">
         <div class="unlock-content">
-            <img src="logo%201.png" alt="Anjani Logo" style="max-width: 200px; margin-bottom: 1rem;">
-            <h1 class="unlock-logo" style="display: none;">ANJANI</h1>
+            <img src="logo%201.png" alt="Anjani Logo" class="unlock-logo-img">
             <p class="unlock-tagline">"The Magic Touch"</p>
         </div>
-        <div class="slide-to-unlock">
-            <p class="unlock-text">Slide to open portfolio</p>
-            <div class="unlock-handle" id="unlock-drag-handle">
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
+        
+        <!-- Interactive Floor Lamp & Cartoon Boy Container -->
+        <div class="lamp-container">
+            <svg id="lamp-boy-svg" viewBox="0 0 400 400" class="interactive-svg">
+                <!-- Soft background ambient glow (hidden or very faint in dark, bright in light) -->
+                <circle id="ambient-glow" cx="250" cy="120" r="100" fill="rgba(255,235,59,0.03)" />
+                
+                <!-- Light Cone (visible only when light is turned on) -->
+                <polygon id="light-cone" points="250,118 0,400 400,400" fill="url(#lightGrad)" opacity="0" />
+                
+                <defs>
+                    <linearGradient id="lightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="rgba(255, 235, 59, 0.7)" />
+                        <stop offset="50%" stop-color="rgba(255, 235, 59, 0.3)" />
+                        <stop offset="100%" stop-color="rgba(255, 255, 255, 0)" />
+                    </linearGradient>
+                </defs>
+
+                <!-- CARTOON BOY CHARACTER -->
+                <g id="cartoon-boy">
+                    <!-- Shadow under boy -->
+                    <ellipse cx="140" cy="385" rx="35" ry="8" fill="rgba(0,0,0,0.6)" />
+                    
+                    <!-- Legs -->
+                    <rect x="122" y="300" width="12" height="80" rx="3" fill="#222" />
+                    <rect x="146" y="300" width="12" height="80" rx="3" fill="#222" />
+                    
+                    <!-- Shoes -->
+                    <path d="M 122 378 C 115 378 110 381 110 385 L 134 385 C 134 381 130 378 122 378 Z" fill="#111" />
+                    <path d="M 146 378 C 139 378 134 381 134 385 L 158 385 C 158 381 154 378 146 378 Z" fill="#111" />
+                    
+                    <!-- Torso (Stylish shirt/jacket) -->
+                    <!-- Makeup Artist Apron / Vest -->
+                    <path d="M 110 215 L 170 215 L 160 305 L 120 305 Z" fill="#2c3e50" />
+                    <!-- Apron detail -->
+                    <path d="M 120 230 L 160 230 L 155 295 L 125 295 Z" fill="#1a252f" />
+                    <!-- Apron straps -->
+                    <path d="M 125 215 L 120 230 M 155 215 L 160 230" stroke="#ecc94b" stroke-width="3" />
+                    <circle cx="120" cy="233" r="3" fill="#ecc94b" />
+                    <circle cx="160" cy="233" r="3" fill="#ecc94b" />
+                    
+                    <!-- Neck -->
+                    <rect x="134" y="195" width="12" height="22" fill="#ffd1a9" />
+                    
+                    <!-- Head -->
+                    <circle cx="140" cy="165" r="32" fill="#ffd1a9" />
+                    
+                    <!-- Hair (Stylish messy/modern crop) -->
+                    <path d="M 108 160 C 104 145 112 130 125 125 C 135 120 150 123 158 130 C 168 127 175 137 172 150 C 175 155 172 165 166 167 C 168 157 162 147 155 147 C 150 143 140 140 135 147 C 125 143 115 150 116 160 Z" fill="#1a1a1a" />
+                    
+                    <!-- Eyes -->
+                    <circle cx="130" cy="165" r="3.5" fill="#111" />
+                    <circle cx="150" cy="165" r="3.5" fill="#111" />
+                    <!-- Smile -->
+                    <path d="M 135 180 Q 140 187 145 180" stroke="#111" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    <!-- Soft Cheeks -->
+                    <circle cx="124" cy="173" r="4" fill="#ff9f80" opacity="0.6" />
+                    <circle cx="156" cy="173" r="4" fill="#ff9f80" opacity="0.6" />
+
+                    <!-- Left Arm & Makeup Brush -->
+                    <path d="M 110 215 Q 90 245 92 275" stroke="#2c3e50" stroke-width="12" stroke-linecap="round" fill="none" />
+                    <!-- Left Hand -->
+                    <circle cx="92" cy="277" r="6" fill="#ffd1a9" />
+                    <!-- Makeup Brush -->
+                    <!-- Handle -->
+                    <line x1="92" y1="277" x2="82" y2="290" stroke="#8B4513" stroke-width="3" stroke-linecap="round" />
+                    <!-- Gold Ferrule -->
+                    <line x1="84" y1="287" x2="81" y2="291" stroke="#D4AF37" stroke-width="4" />
+                    <!-- Bristles -->
+                    <path d="M 82 290 C 78 295 76 300 79 303 C 82 306 87 302 85 296 Z" fill="#ffb6c1" />
+
+                    <!-- Right Arm -->
+                    <path id="boy-right-arm" d="M 170 215 Q 185 245 178 275" stroke="#2c3e50" stroke-width="12" stroke-linecap="round" fill="none" />
+                    <!-- Right Hand -->
+                    <circle id="boy-right-hand" cx="178" cy="277" r="6" fill="#ffd1a9" />
+                </g>
+
+                <!-- FLOOR LAMP -->
+                <g id="floor-lamp">
+                    <!-- Base shadow -->
+                    <ellipse cx="260" cy="385" rx="45" ry="8" fill="rgba(0,0,0,0.7)" />
+                    <!-- Base -->
+                    <path d="M 230 385 C 230 375 290 375 290 385 Z" fill="#b8860b" />
+                    <rect x="230" y="383" width="60" height="4" fill="#996515" rx="2" />
+                    
+                    <!-- Pole -->
+                    <rect x="256" y="110" width="8" height="275" fill="#b8860b" />
+                    
+                    <!-- Light Bulb -->
+                    <circle cx="260" cy="115" r="12" fill="#fff" opacity="0.9" />
+                    
+                    <!-- Shade -->
+                    <path d="M 235 75 L 285 75 L 300 115 L 220 115 Z" fill="#333" stroke="#b8860b" stroke-width="2" />
+                    <!-- Shade Inner Glow -->
+                    <path d="M 221 115 L 299 115 L 290 120 L 230 120 Z" fill="#ffd700" opacity="0.3" id="shade-inner-glow" />
+
+                    <!-- Interactive Pull-Cord Group -->
+                    <g id="pull-cord-group">
+                        <!-- Cord Line -->
+                        <line id="cord-line" x1="235" y1="115" x2="235" y2="230" stroke="#999" stroke-width="2.5" />
+                        <!-- Pull Handle -->
+                        <path d="M 231 230 L 239 230 L 242 242 L 228 242 Z" fill="#d4af37" />
+                        <circle cx="235" cy="246" r="4" fill="#b8860b" />
+                        <!-- Invisible touch target -->
+                        <circle cx="235" cy="238" r="30" fill="transparent" style="cursor: grab;" class="cord-target" />
+                    </g>
+                </g>
+            </svg>
+            <div class="pull-instruction">Pull cord to turn on the light</div>
         </div>
     </div>
 
@@ -102,7 +205,7 @@
 
     <!-- About Me Section -->
     <section id="about" class="about section">
-        <div class="container about-grid">
+        <div class="about-grid container">
             <div class="about-text reveal">
                 <h2 class="section-title brush-underline mb-2" style="font-size: 3rem;">The Artist Behind the Brush</h2>
                 <p>Anjani is a professional makeup artist with a passion for enhancing natural beauty and a flair for high‑fashion editorial aesthetics. Every face is her canvas, and every look tells a bold, beautiful story. From bridal transformations to editorial shoots, she blends creativity with precision to deliver bespoke makeup experiences that celebrate individuality and confidence.</p>
@@ -139,7 +242,21 @@
                 </div>
             </div>
             <div class="about-image reveal reveal-delay-1">
-                <img src="pro%20makeup%20artist%20certificate.png" alt="Anjani - Makeup Artist" class="profile-img floating-element">
+                <div class="about-slider">
+                    <div class="about-slide active">
+                        <img src="anjani%20photo%20with%20trophy.jpg" alt="Anjani - Competition Winner">
+                        <span style="position: absolute; top: 15px; left: 15px; background: #daa520; color: #fff; font-weight: 700; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-transform: uppercase; letter-spacing: 1px; font-family: var(--font-body); z-index: 10;">Competition Winner</span>
+                    </div>
+                    <div class="about-slide">
+                        <img src="anajni%20photo%20with%20mam.jpg" alt="Anjani with Mentor">
+                    </div>
+                    <div class="about-slide">
+                        <img src="pro%20makeup%20artist%20certificate.png" alt="Pro Makeup Artist Certificate">
+                    </div>
+                    <!-- Slider Controls -->
+                    <button class="about-slider-btn prev" id="about-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="about-slider-btn next" id="about-next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
@@ -147,11 +264,11 @@
     <!-- Portfolio Gallery with Filtering -->
     <section id="portfolio" class="portfolio section" style="background: rgba(255,255,255,0.3);">
         <div class="container">
-            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Signature Looks</h2>
-            <p class="text-center text-muted mb-2" style="margin-top:1rem;">Explore the different makeup aesthetics.</p>
+            <h2 class="section-title brush-underline mb-2 text-center" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Signature Looks</h2>
+            <p class="text-muted mb-2 text-center" style="margin-top:1rem;">Explore the different makeup aesthetics.</p>
 
             <!-- Category Tabs -->
-            <div class="portfolio-tabs text-center reveal" style="margin-top:2rem;">
+            <div class="portfolio-tabs reveal text-center" style="margin-top:2rem;">
                 <button class="tab-btn active" data-filter="all">All Looks</button>
                 <button class="tab-btn" data-filter="bridal">Bridal</button>
                 <button class="tab-btn" data-filter="editorial">Editorial</button>
@@ -399,14 +516,46 @@
     <!-- Behind the Scenes & Academy -->
     <section id="bts" class="portfolio section">
         <div class="container">
-            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Behind the Scenes & Academy</h2>
-            <p class="text-center text-muted mb-2" style="margin-top:1rem;">Moments with clients, artists, and certification achievements.</p>
+            <h2 class="section-title brush-underline mb-2 text-center" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Behind the Scenes & Academy</h2>
+            <p class="text-muted mb-2 text-center" style="margin-top:1rem;">Moments with clients, artists, and certification achievements.</p>
             <div class="gallery-grid" style="margin-top:2rem;">
-<div class="gallery-item reveal">
-                        <div class="image-wrapper">
-                            <img src="Bengali%20look%20with%20artist.png" loading="lazy" alt="Bengali Look With Artist">
+                <div class="gallery-item reveal">
+                    <div class="image-wrapper">
+                        <img src="anjani%20photo%20with%20trophy.jpg" loading="lazy" alt="Anjani Photo with Trophy">
+                        <div class="overlay">
+                            <h3>Competition Winner Design</h3>
                         </div>
                     </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="image-wrapper">
+                        <img src="anjani%20trophy%20and%20certificate.jpg" loading="lazy" alt="Anjani Trophy and Certificate">
+                        <div class="overlay">
+                            <h3>Competition Winner Design</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="image-wrapper">
+                        <img src="anjani%20certificate%20with%20mam.jpg" loading="lazy" alt="Anjani Certificate with Mentor">
+                        <div class="overlay">
+                            <h3>Certification & Academy Success</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="image-wrapper">
+                        <img src="anajni%20photo%20with%20mam.jpg" loading="lazy" alt="Anjani with Mentor">
+                        <div class="overlay">
+                            <h3>Academy Moments</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item reveal">
+                    <div class="image-wrapper">
+                        <img src="Bengali%20look%20with%20artist.png" loading="lazy" alt="Bengali Look With Artist">
+                    </div>
+                </div>
                     <div class="gallery-item reveal">
                         <div class="image-wrapper">
                             <img src="Bridal%20look%20with%20artists.png" loading="lazy" alt="Bridal Look With Artists">
@@ -454,7 +603,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section" style="background: rgba(255,255,255,0.2);">
         <div class="container">
-            <h2 class="section-title text-center brush-underline mb-2" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Client Love</h2>
+            <h2 class="section-title brush-underline mb-2 text-center" style="font-size: 3rem; display:block; margin:auto; width:fit-content;">Client Love</h2>
             
             <div class="testimo-wrapper reveal" style="margin-top: 3rem;">
                 <div class="testimonial-carousel">
@@ -525,8 +674,8 @@
                 </div>
 
                 <div class="glass-card contact-card reveal reveal-delay-1">
-                    <h3 class="text-center mb-2" style="font-size: 1.8rem; color:var(--primary-color);">Book Your Appointment</h3>
-                    <p class="text-center text-muted mb-2" style="margin-bottom: 2rem;">Secure your spot on the calendar.</p>
+                    <h3 class="mb-2 text-center" style="font-size: 1.8rem; color:var(--primary-color);">Book Your Appointment</h3>
+                    <p class="text-muted mb-2 text-center" style="margin-bottom: 2rem;">Secure your spot on the calendar.</p>
                     <form class="booking-form" id="bookingForm">
                         <div class="input-group">
                             <input type="text" id="name" name="name" required placeholder=" ">
@@ -563,7 +712,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container reveal">
+        <div class="reveal container">
             <div class="footer-logo">ANJANI</div>
             <div class="social-links">
                 <a href="https://www.instagram.com/the_magic_touch_77?igsh=MWUzZjlwOGIxYXhucg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>

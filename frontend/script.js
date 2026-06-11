@@ -27,64 +27,149 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- Unlock Screen Logic ---
+    // --- Unlock Screen (Interactive Lamp Pull-Cord) Logic ---
     const unlockScreen = document.getElementById("unlock-screen");
-    const unlockHandle = document.getElementById("unlock-drag-handle");
-    if (unlockScreen && unlockHandle) {
-        document.body.classList.add("locked"); // prevent scrolling initially
-        const unlockContainer = document.querySelector(".slide-to-unlock");
+    const pullCord = document.getElementById("pull-cord-group");
+    const lightCone = document.getElementById("light-cone");
+    const cartoonBoy = document.getElementById("cartoon-boy");
+    const boyArm = document.getElementById("boy-right-arm");
+    const boyHand = document.getElementById("boy-right-hand");
+
+    if (unlockScreen && pullCord) {
+        document.body.classList.add("locked"); // Prevent scrolling initially
         
-        let isDraggingUnlock = false;
-        let startXUnlock = 0;
-        let currentTranslate = 0;
-        const maxTranslate = unlockContainer.clientWidth - unlockHandle.clientWidth - 8;
+        let isDraggingCord = false;
+        let startY = 0;
+        let currentTranslateY = 0;
+        const maxDrag = 60; // Maximum drag distance in pixels
+        let lightTriggered = false;
 
-        const startUnlockDrag = (e) => {
-            isDraggingUnlock = true;
-            startXUnlock = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
-            unlockHandle.style.transition = 'none';
+        const startCordDrag = (e) => {
+            if (lightTriggered) return;
+            isDraggingCord = true;
+            startY = e.type.includes("mouse") ? e.clientY : e.touches[0].clientY;
+            pullCord.classList.remove("snap-back");
         };
 
-        const moveUnlockDrag = (e) => {
-            if (!isDraggingUnlock) return;
-            const currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
-            let moveX = currentX - startXUnlock;
+        const moveCordDrag = (e) => {
+            if (!isDraggingCord || lightTriggered) return;
+            const currentY = e.type.includes("mouse") ? e.clientY : e.touches[0].clientY;
+            let dy = currentY - startY;
+
+            // Only allow dragging downwards
+            if (dy < 0) dy = 0;
+            if (dy > maxDrag) dy = maxDrag;
+
+            currentTranslateY = dy;
+            pullCord.style.transform = `translateY(${dy}px)`;
+
+            // Trigger the light if pulled past 40px
+            if (dy >= 40 && !lightTriggered) {
+                triggerLight();
+            }
+        };
+
+        const endCordDrag = () => {
+            if (!isDraggingCord) return;
+            isDraggingCord = false;
+
+            // Elastic snap back
+            pullCord.classList.add("snap-back");
+            pullCord.style.transform = `translateY(0px)`;
             
-            if (moveX < 0) moveX = 0;
-            if (moveX > maxTranslate) moveX = maxTranslate;
+            // If they released it after a click/short pull, check if we want to trigger it anyway
+            if (currentTranslateY > 15 && !lightTriggered) {
+                triggerLight();
+            }
             
-            currentTranslate = moveX;
-            unlockHandle.style.transform = `translateX(${moveX}px)`;
+            currentTranslateY = 0;
+        };
+
+        const triggerLight = () => {
+            lightTriggered = true;
             
-            // If moved more than 95% of way, unlock!
-            if (moveX >= maxTranslate * 0.95) {
-                isDraggingUnlock = false;
-                unlockHandle.style.transform = `translateX(${maxTranslate}px)`;
+            // 1. Turn on the lamp light cone and illuminate the room
+            if (lightCone) {
+                lightCone.style.opacity = "1";
+                lightCone.style.transition = "opacity 0.1s ease";
+            }
+            unlockScreen.classList.add("lit");
+            
+            // Restore boy's arm and snap cord back immediately on trigger
+            if (boyArm && boyHand) {
+                boyArm.setAttribute("d", "M 170 215 Q 185 245 178 275");
+                boyHand.setAttribute("cx", "178");
+                boyHand.setAttribute("cy", "277");
+            }
+            pullCord.classList.add("snap-back");
+            pullCord.style.transform = `translateY(0px)`;
+
+            // Optional: subtle device haptic feedback or audio click can be added here
+            
+            // 2. Fade/Scale out the unlock overlay after a short delay
+            setTimeout(() => {
+                unlockScreen.classList.add("unlocked");
+                document.body.classList.remove("locked");
+                
+                // Remove from layout after transition completes
                 setTimeout(() => {
-                    unlockScreen.classList.add('unlocked');
-                    document.body.classList.remove('locked');
-                }, 200);
-            }
+                    unlockScreen.style.display = "none";
+                }, 800);
+            }, 500);
         };
 
-        const endUnlockDrag = () => {
-            if (!isDraggingUnlock) return;
-            isDraggingUnlock = false;
-            // If didn't reach the end, snap back
-            if (currentTranslate < maxTranslate * 0.95) {
-                unlockHandle.style.transition = 'transform 0.3s ease';
-                unlockHandle.style.transform = `translateX(0px)`;
-                currentTranslate = 0;
+        // Click event on cord to also trigger it
+        pullCord.addEventListener("click", (e) => {
+            e.stopPropagation(); // Avoid triggering boy's click if inside the SVG
+            if (!lightTriggered) {
+                // Quick pull down and release animation
+                pullCord.classList.remove("snap-back");
+                pullCord.style.transform = `translateY(25px)`;
+                setTimeout(() => {
+                    triggerLight();
+                }, 100);
             }
-        };
+        });
 
-        unlockHandle.addEventListener('mousedown', startUnlockDrag);
-        document.addEventListener('mousemove', moveUnlockDrag);
-        document.addEventListener('mouseup', endUnlockDrag);
+        // Click/Touch on cartoon boy triggers him reaching out and pulling the cord
+        if (cartoonBoy && boyArm && boyHand) {
+            cartoonBoy.addEventListener("click", () => {
+                if (lightTriggered) return;
 
-        unlockHandle.addEventListener('touchstart', startUnlockDrag, {passive: true});
-        document.addEventListener('touchmove', moveUnlockDrag, {passive: true});
-        document.addEventListener('touchend', endUnlockDrag);
+                // Step 1: Reach out to grab the cord
+                // Grab path coordinates: M 170 215 Q 210 180 235 140
+                boyArm.setAttribute("d", "M 170 215 Q 210 180 235 140");
+                boyHand.setAttribute("cx", "235");
+                boyHand.setAttribute("cy", "140");
+
+                // Step 2: Pull down the cord (after arm reaches cord)
+                setTimeout(() => {
+                    if (lightTriggered) return;
+                    // Pull path coordinates: M 170 215 Q 215 210 235 180
+                    boyArm.setAttribute("d", "M 170 215 Q 215 210 235 180");
+                    boyHand.setAttribute("cx", "235");
+                    boyHand.setAttribute("cy", "180");
+
+                    // Pull cord SVG group down simultaneously
+                    pullCord.classList.remove("snap-back");
+                    pullCord.style.transform = "translateY(40px)";
+
+                    // Step 3: Trigger light
+                    setTimeout(() => {
+                        triggerLight();
+                    }, 200);
+
+                }, 250); // Matches the arm transition time
+            });
+        }
+
+        pullCord.addEventListener("mousedown", startCordDrag);
+        document.addEventListener("mousemove", moveCordDrag);
+        document.addEventListener("mouseup", endCordDrag);
+
+        pullCord.addEventListener("touchstart", startCordDrag, { passive: true });
+        document.addEventListener("touchmove", moveCordDrag, { passive: true });
+        document.addEventListener("touchend", endCordDrag);
     }
 
     // 2. Navbar Scroll Effect & Mobile Menu
@@ -249,6 +334,36 @@ document.addEventListener("DOMContentLoaded", () => {
             tIndex = (tIndex + 1) % testimoSlides.length;
             showSlide(tIndex);
         }, 8000);
+    }
+
+    // About Me Section Slider
+    const aboutSlides = document.querySelectorAll(".about-slide");
+    const aboutPrev = document.getElementById("about-prev");
+    const aboutNext = document.getElementById("about-next");
+    
+    if (aboutSlides.length > 0 && aboutPrev && aboutNext) {
+        let aboutIndex = 0;
+        
+        const showAboutSlide = (index) => {
+            aboutSlides.forEach(slide => slide.classList.remove("active"));
+            aboutSlides[index].classList.add("active");
+        };
+        
+        aboutNext.addEventListener("click", () => {
+            aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+            showAboutSlide(aboutIndex);
+        });
+        
+        aboutPrev.addEventListener("click", () => {
+            aboutIndex = (aboutIndex - 1 + aboutSlides.length) % aboutSlides.length;
+            showAboutSlide(aboutIndex);
+        });
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+            showAboutSlide(aboutIndex);
+        }, 5000);
     }
 
     // 8. Contact Form Submission
